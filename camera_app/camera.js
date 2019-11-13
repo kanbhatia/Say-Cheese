@@ -27,7 +27,7 @@ cameraTrigger.onclick = function() {
     cameraSensor.height = cameraView.videoHeight;
     // Create image
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
-    // direct to tkaen image to image/webp uri
+    // direct to taken image to image/webp uri
     cameraOutput.src = cameraSensor.toDataURL("image/jpeg");
     // Add to "taken" class, see css for "taken" class to adjust picture dimensions
     cameraOutput.classList.add("taken");

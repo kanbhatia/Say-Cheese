@@ -42,3 +42,22 @@ html, body{
     right: 20px;
     z-index: 2;
 }
+
+.center {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 25%;
+    margin-top: 2%;
+    width: 80%;
+}
+.text {
+    font-size: 100%;    
+    position: relative;
+    text-align: center;
+    padding-top: 2%;
+    font-weight: bold;
+    background-color: saddlebrown;
+
+}
