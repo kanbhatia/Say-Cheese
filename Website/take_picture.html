@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Media Query Example</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style_take.css">
+  <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+    <div class="topnav" id="myTopnav">
+      <a href="homepage.html">Home</a>
+      <a href="take_picture.html"  class="active">Take a Picture</a>
+      <a href="engine.html">Engine Stats</a>
+      <!-- <a href="extra.html">Extra</a> -->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="row align-items-center">
+    <div class="container h-100">
+    <div class="row align-items-center h-100">
+    <div class="col-xs-6 col-md-6">
+        <div class="card h-100 border-primary justify-content-center">
+        <img src="profile2.png" class= "center">
+      </div>
+    </div>
+    </div>
+    </div>
+    <div class="camera">
+        <main id="camera">
+            <div class="col-xs-6 col-md-6">
+            <!-- Camera view -->
+            <video id="camera--view" autoplay playsinline></video>
+          </div>
+
+    <div class="col-xs-6 col-md-6">
+        <div class="classification" style="font-size:3vw;">
+            Classification
+        </div>
+      </div>
+        <div class="col-xs-6 col-md-6">
+        <div class="answer" style="font-size:2vw;">
+          90% Male
+      </div>
+    </div>
+
+            <!-- Camera sensor -->
+
+            <div class="col-xs-6 col-md-6">
+            <canvas id="camera--sensor"></canvas>
+
+      </div>
+            <!-- Camera output -->
+            <div class="container h-100">
+                <div class="row align-items-center h-100">
+            <div class="col-xs-6 col-md-6">
+              <div class="results"></div>
+            <img src="//:0" alt="" id="camera--output">
+          </div>
+        </div>
+            <!-- Camera trigger -->
+
+            <button id="camera--trigger">Take Photo</button>
+        </main>
+    <!-- Reference to your JavaScript file -->
+    <script src="app.js"></script> 
+
+</div>
+
+</div>
+</body>
+</html>
