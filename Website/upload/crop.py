@@ -1,6 +1,6 @@
 from PIL import Image
 
-# Replcace with converted image
+# Replace with converted image
 im = Image.open('TestPic.jpeg')
 
 def crop_center(pil_img, crop_width, crop_height):
@@ -14,4 +14,4 @@ def crop_max_square(pil_img):
     return crop_center(pil_img, min(pil_img.size), min(pil_img.size))
 
 im_new = crop_max_square(im)
-im_new.save('cropped.jpg', quality=100)
+# im_new.save('cropped.jpg', quality=100)
