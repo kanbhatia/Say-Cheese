@@ -1,3 +1,11 @@
+body {
+  background-image: url('marble.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: #333;
@@ -37,21 +45,31 @@
     display: none;
   }
 
+.cameratxt{
+  font-family: 'Questrial', sans-serif;
+  background: rgb(12, 12, 12);
+  color: rgb(241, 243, 233);
+  text-align: center;
+  margin-left: 15px;
+  margin-top: 10px;
+  padding-top: 5px;
+}
+
   .classification {
     font-family: 'Questrial', sans-serif;
-    background: rgb(182, 213, 238);
+    background: rgb(12, 12, 12);
+    color: rgb(241, 243, 233);
     text-align: center;
+    margin-right: 15px;
     margin-top: 10px;
-    /* margin-right: 10px; */
-    /* margin-left: -20px; */
   }
+
   .answer {
     font-family: 'Questrial', sans-serif;
-    background: rgb(213, 226, 236);
+    background: rgb(95, 96, 97);
+    color: rgb(241, 243, 233);
     text-align: center;
-    /* margin-right: 10px; */
-    /* margin-left: -20px; */
-
+    margin-right: 15px;
   }
 
 
@@ -59,17 +77,11 @@
     width: 100%;
     height: 200%;
     object-fit: cover;
-    margin-top: 10px;
-    margin-left: 10px;
-    /* z-index: 1; */
 }
 
 #camera--sensor {
   width: 100%;
   object-fit: cover;
-  margin-right: 10px;
-
-
 }
 
 #camera--view, #camera--sensor{
@@ -78,17 +90,17 @@
 }
 
 #camera--trigger{
-    width: 200px;
+    width: 150px;
     background-color: black;
     color: white;
-    font-size: 16px;
-    border-radius: 30px;
+    font-size: 20px;
+    border-radius: 20px;
     border: none;
     padding: 15px 20px;
     text-align: center;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: fixed;
-    bottom: 100px;
+    bottom: 10px;
     left: calc(50% - 100px);
 }
 
@@ -99,18 +111,15 @@
     border: solid 3px white;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     top: 10px;
-    left: 50px;
     z-index: 2;
 }
 
 .center {
-  position: absolute!important;
-  /* display: block; */
+  position: absolute;
   opacity: 25%!important;
-  width: 70%!important;
   z-index: 2!important;
-  margin-top: 30px;
-  object-fit: cover;
-  /* margin-left: 10px; */
-/* vertical-align: middle; */
+}
+
+img{
+width: 70%!important;
 }

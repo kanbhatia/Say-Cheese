@@ -11,7 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class="row">
         <div class="col-xs-12 col-md-12">
@@ -26,57 +26,73 @@
     </div>
   </div>
 </div>
-<div class="row align-items-center">
-    <div class="container h-100">
-    <div class="row align-items-center h-100">
-    <div class="col-xs-6 col-md-6">
-        <div class="card h-100 border-primary justify-content-center">
-        <img src="profile2.png" class= "center">
-      </div>
-    </div>
-    </div>
-    </div>
-    <div class="camera">
-        <main id="camera">
-            <div class="col-xs-6 col-md-6">
-            <!-- Camera view -->
-            <video id="camera--view" autoplay playsinline></video>
+
+<body>
+
+
+
+          <div class="row">
+          <div class="col-xs-6 col-md-6">
+            <div class="cameratxt" style="font-size:3vw;">
+                Camera
+            </div>
           </div>
 
+
     <div class="col-xs-6 col-md-6">
-        <div class="classification" style="font-size:3vw;">
-            Classification
+        <div class="classification" style="font-size:2vw;">
+            Classification:
         </div>
       </div>
+  
         <div class="col-xs-6 col-md-6">
         <div class="answer" style="font-size:2vw;">
           90% Male
       </div>
     </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6 col-md-6 text-center">
+    <div class="center">
+      <img src="profile2.png">
+    </div>
+    </div>
+  </div>
+
+  <div class="row"></div>
+  <div class="col-xs-6 col-md-6">
+  <div class="camera">
+    <main id="camera">
+        <!-- Camera view -->
+        <video id="camera--view" autoplay playsinline></video>
+      </div>
+    </div>
+  </div>
 
             <!-- Camera sensor -->
-
-            <div class="col-xs-6 col-md-6">
+            <!-- <div class="row"> -->
+            <div class="col-xs-6 col-md-6 text-center">
             <canvas id="camera--sensor"></canvas>
-
-      </div>
+          </div>
+        </div>
             <!-- Camera output -->
-            <div class="container h-100">
-                <div class="row align-items-center h-100">
+            <div class="row">
             <div class="col-xs-6 col-md-6">
               <div class="results"></div>
             <img src="//:0" alt="" id="camera--output">
           </div>
         </div>
             <!-- Camera trigger -->
-
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-md-2">
             <button id="camera--trigger">Take Photo</button>
+          </div>
+        </div>
         </main>
     <!-- Reference to your JavaScript file -->
     <script src="app.js"></script> 
-
-</div>
-
-</div>
 </body>
 </html>
