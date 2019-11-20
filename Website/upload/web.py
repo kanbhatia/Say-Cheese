@@ -66,27 +66,37 @@ def handle_data():
     X = X/255
     X_c = X_c/255
 
-    prediciton = model.predict(X)[0][0]
-    male_prediction = round(((1-prediciton)*100),2)
-    female_prediciton = round(prediciton*100,2)
-
-    if (prediciton < .5):
+    prediction = model.predict(X)[0][0]
+    male_prediction = round(((1-prediction)*100),2)
+    female_prediciton = round(prediction*100,2)
+    higher = []
+    if (prediction < .5):
         print(f"Male with {male_prediction}% certainty")
-    #     print(f"{round(male_prediction,2)}")
+        higher = ["Male",male_prediction]
     else:
-            print(f"Female with {female_prediciton}% certainty")
+        print(f"Female with {female_prediciton}% certainty")
+        higher = ["Female",female_prediciton]
+        
 
-    prediciton_c = model_color.predict(X_c)[0][0]
-    male_prediction_c = round(((1-prediciton_c)*100),2)
-    female_prediciton_c = round(prediciton_c*100,2)
+    prediction_c = model_color.predict(X_c)[0][0]
+    male_prediction_c = round(((1-prediction_c)*100),2)
+    female_prediction_c = round(prediction_c*100,2)
 
-    if (prediciton_c < .5):
+    if (prediction_c < .5):
         print(f"Male with {male_prediction_c}% certainty")
-    #     print(f"{round(male_prediction,2)}")
-    else:
-            print(f"Female with {female_prediciton_c}% certainty")
+        higher_c = ["Male",male_prediction_c]
 
-    return redirect("/camera")
+    else:
+        print(f"Female with {female_prediction_c}% certainty")
+        higher_c = ["Female",female_prediction_c]
+
+    if higher[1] > higher_c[1]:
+        highest = higher.copy()
+    else:
+        highest = higher_c.copy()
+
+    
+    return render_template("index.html",percent = highest[1], gender = highest[0])
 
 def crop_center(img,cropx,cropy):
     y,x,c = img.shape
