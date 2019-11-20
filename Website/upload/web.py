@@ -1,76 +1,3 @@
-# from flask import Flask, render_template, request, redirect
-# from PIL import Image
-
-# # Load the model
-# import numpy as np
-# import matplotlib.pyplot as plt
-# import os
-# # import cv2
-# import cv2
-# # import os
-# import tensorflow as tf
-# from tensorflow.keras.models import load_model
-
-# model = load_model("static/model/40_epochs.h5")
-# model_color = load_model("static/model/color_epochs.h5")
-
-
-# import base64
-# import io
-# from matplotlib import pyplot as plt
-# import matplotlib.image as mpimg
-
-# app = Flask(__name__)
-
-# @app.route("/")
-# def home():
-#     return render_template("index.html")
-
-# @app.route('/data', methods=['POST'])
-# def handle_data():
-#     encoded = request.form['datauri']
-    
-#     # Convert Uri to jpg
-#     i = base64.b64decode (encoded)
-#     i = io.BytesIO(i)
-#     i = mpimg.imread(i, format='JPG')
-
-#     # plt.imshow(i, interpolation='nearest')
-#     # plt.show()  
-    
-#     # Crop image
-#     im_new = crop_center(i)
-
-#     # Run model
-#     path = i
-#     IMG_SIZE = 100  
-
-#     # Black and White
-#     img_array = cv2.imread(i, cv2.IMREAD_GRAYSCALE)
-#     new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))
-#     # plt.imshow(new_array, cmap = "gray")
-
-
-#     # Color
-#     img_array_c = cv2.imread(i)
-#     RGB_img = cv2.cvtColor(img_array_c, cv2.COLOR_BGR2RGB)
-#     new_array_c = cv2.resize(RGB_img, (IMG_SIZE, IMG_SIZE))
-#     plt.imshow(RGB_img)
-
-
-#     return redirect("/")
-
-# def crop_center(pil_img):
-#     minimum = min(pil_img.size)
-#     img_width, img_height = pil_img.size
-#     return pil_img.crop(((img_width - minimum) // 2,
-#                          (img_height - minimum) // 2,
-#                          (img_width + minimum) // 2,
-#                          (img_height + minimum) // 2))
-
-# if __name__ == "__main__":
-#     app.run(debug=True)
-
 from flask import Flask, render_template, request, redirect
 
 import base64
@@ -94,7 +21,15 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
+    return render_template("homepage.html")
+
+@app.route("/camera")
+def camera():
     return render_template("index.html")
+
+@app.route("/engine")
+def engine():
+    return render_template("engine.html")
 
 @app.route('/data', methods=['POST'])
 def handle_data():
@@ -151,8 +86,7 @@ def handle_data():
     else:
             print(f"Female with {female_prediciton_c}% certainty")
 
-
-    return redirect("/")
+    return redirect("/camera")
 
 def crop_center(img,cropx,cropy):
     y,x,c = img.shape
