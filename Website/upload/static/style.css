@@ -67,3 +67,11 @@ body {
     font-size: 50px;
     font-family: 'Questrial', sans-serif;
   }
+  .home{
+    height: 60px;
+    width: 60px;
+    right: 20px;
+    bottom: 4px;
+    position: absolute;
+    filter: invert(48%) sepia(0%) saturate(10%) hue-rotate(100deg) brightness(100%) contrast(100%);
+  }

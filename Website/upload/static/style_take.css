@@ -72,21 +72,24 @@ body {
     margin-right: 15px;
   }
 
-
   #camera, #camera--view{
-    width: 100%;
+    width: 95%;
     height: 200%;
     object-fit: cover;
+    margin-left: 10px;
+    margin-top: 5px;
+
 }
 
 #camera--sensor {
-  width: 100%;
+  width: 90%;
   object-fit: cover;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 #camera--view, #camera--sensor{
     transform: scaleX(-1);
-    /* filter: FlipH; */
 }
 
 #camera--trigger{
@@ -114,12 +117,23 @@ body {
     z-index: 2;
 }
 
-.center {
-  position: absolute;
-  opacity: 25%!important;
+.responsive{
   z-index: 2!important;
+  height: auto;
+  width: 50%;
+  opacity: 25%!important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+
 }
 
-img{
-width: 70%!important;
+.home{
+  height: 60px;
+  width: 60px;
+  right: 20px;
+  bottom: 4px;
+  position: absolute;
+  filter: invert(48%) sepia(0%) saturate(10%) hue-rotate(100deg) brightness(100%) contrast(100%);
 }
