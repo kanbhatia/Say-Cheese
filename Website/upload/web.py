@@ -13,9 +13,11 @@ import os
 import cv2
 import tensorflow as tf
 from tensorflow.keras.models import load_model
-model = load_model("static/model/40_epochs.h5")
-model_color = load_model("static/model/color_epochs.h5")
+# model = load_model("static/model/40_epochs.h5")
+# model_color = load_model("static/model/color_epochs.h5")
 
+model = load_model("static/model/wiki_model.h5")
+model_color = load_model("static/model/wiki_model2.h5")
 
 app = Flask(__name__)
 
@@ -53,23 +55,26 @@ def handle_data():
     # Black and White
     img_gray = cv2.cvtColor(im_new, cv2.COLOR_BGR2GRAY)
     new_array = cv2.resize(img_gray, (IMG_SIZE, IMG_SIZE))
-    plt.imshow(new_array, cmap = "gray")
+    # plt.imshow(new_array, cmap = "gray")
 
 
     # Color
-    new_array_c = cv2.resize(im_new, (IMG_SIZE, IMG_SIZE))
-    plt.imshow(new_array_c)
+    new_array_c = cv2.resize(img_gray, (IMG_SIZE, IMG_SIZE))
+    # plt.imshow(new_array_c)
 
     X = np.array(new_array).reshape(-1,IMG_SIZE,IMG_SIZE,1)
-    X_c = np.array(new_array_c).reshape(-1,IMG_SIZE,IMG_SIZE,3)
+    X_c = np.array(new_array_c).reshape(-1,IMG_SIZE,IMG_SIZE,1)
 
     X = X/255
     X_c = X_c/255
 
     prediction = model.predict(X)[0][0]
+    prediction = abs(1-prediction)
     male_prediction = round(((1-prediction)*100),2)
     female_prediciton = round(prediction*100,2)
+
     higher = []
+
     if (prediction < .5):
         print(f"Male with {male_prediction}% certainty")
         higher = ["Male",male_prediction]
@@ -79,6 +84,8 @@ def handle_data():
         
 
     prediction_c = model_color.predict(X_c)[0][0]
+    prediction_c = abs(1-prediction_c)
+
     male_prediction_c = round(((1-prediction_c)*100),2)
     female_prediction_c = round(prediction_c*100,2)
 
