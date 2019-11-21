@@ -43,23 +43,23 @@ def handle_data():
     i = io.BytesIO(i)
     i = mpimg.imread(i, format='JPG')
 
-    if (i.shape)[0] < (i.shape)[1]:
-        crop_size = i.shape[0]
-    else:
-        crop_size = i.shape[1]
+    # if (i.shape)[0] < (i.shape)[1]:
+    #     crop_size = i.shape[0]
+    # else:
+    #     crop_size = i.shape[1]
 
-    im_new = crop_center(i,crop_size,crop_size)
+    # im_new = crop_center(i,crop_size,crop_size)
     
     IMG_SIZE = 100
 
     # Black and White
-    img_gray = cv2.cvtColor(im_new, cv2.COLOR_BGR2GRAY)
+    img_gray = cv2.cvtColor(i, cv2.COLOR_BGR2GRAY)
     new_array = cv2.resize(img_gray, (IMG_SIZE, IMG_SIZE))
     # plt.imshow(new_array, cmap = "gray")
 
 
     # Color
-    new_array_c = cv2.resize(img_gray, (IMG_SIZE, IMG_SIZE))
+    new_array_c = cv2.resize(i, (IMG_SIZE, IMG_SIZE))
     # plt.imshow(new_array_c)
 
     X = np.array(new_array).reshape(-1,IMG_SIZE,IMG_SIZE,1)
