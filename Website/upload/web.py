@@ -4,7 +4,7 @@ import base64
 import io
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-from PIL import Image
+# from PIL import Image
 
 # Load the model
 import numpy as np
