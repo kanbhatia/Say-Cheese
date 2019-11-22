@@ -120,9 +120,9 @@ body {
 .responsive{
   z-index: 2!important;
   height: auto;
-  width: 50%;
+  width: 35%;
   opacity: 25%!important;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
