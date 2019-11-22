@@ -19,6 +19,8 @@ from tensorflow.keras.models import load_model
 model = load_model("static/model/wiki_model.h5")
 model_color = load_model("static/model/wiki_model2.h5")
 
+encoded = ""
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -36,10 +38,10 @@ def engine():
 @app.route('/data', methods=['POST'])
 def handle_data():
     encoded = request.form['datauri']
-    encoded = encoded.split(",")[1]
+    clean = encoded.split(",")[1]
     
     # Convert Uri to jpg
-    i = base64.b64decode (str(encoded))
+    i = base64.b64decode (str(clean))
     i = io.BytesIO(i)
     i = mpimg.imread(i, format='JPG')
 
@@ -103,7 +105,7 @@ def handle_data():
         highest = higher_c.copy()
 
     
-    return render_template("index.html",percent = highest[1], gender = highest[0])
+    return render_template("index.html",percent = highest[1], gender = highest[0], encoded=encoded)
 
 def crop_center(img,cropx,cropy):
     y,x,c = img.shape

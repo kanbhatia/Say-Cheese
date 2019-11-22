@@ -75,14 +75,15 @@
     <!-- <div class="row text-center"> -->
             <!-- Camera sensor -->
             <div class="col-xs-6 col-md-6">
-            <canvas id="camera--sensor"></canvas>
+                <img src = {{encoded}} style="transform: scaleX(-1);" onerror="this.style.display='none'">
+            <canvas id="camera--sensor" style="display: none;"></canvas>
           </div>
         <!-- </div> -->
             <!-- Camera output -->
             <!-- <div class="row"> -->
             <!-- <div class="col-xs-6 col-md-6"> -->
               <div class="results"></div>
-            <img  src="//:0" alt="" id="camera--output">
+            <img  src="//:0" alt="" id="camera--output" style="display: none;">
           </div>
         </div>
             <!-- Camera trigger -->
