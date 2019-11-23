@@ -4,17 +4,15 @@ import base64
 import io
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-# from PIL import Image
 
 # Load the model
 import numpy as np
 import os
+
 # import cv2
 import cv2
 import tensorflow as tf
 from tensorflow.keras.models import load_model
-# model = load_model("static/model/40_epochs.h5")
-# model_color = load_model("static/model/color_epochs.h5")
 
 model_1 = load_model("static/model/40_epochs.h5")
 model_2 = load_model("static/model/color_epochs.h5")
@@ -85,12 +83,6 @@ def handle_data():
         gender = "FEMALE"
     
     return render_template("index.html",gender = gender, encoded=encoded)
-
-def crop_center(img,cropx,cropy):
-    y,x,c = img.shape
-    startx = x//2 - cropx//2
-    starty = y//2 - cropy//2    
-    return img[starty:starty+cropy, startx:startx+cropx, :]
 
 
 if __name__ == "__main__":
