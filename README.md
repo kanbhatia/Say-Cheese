@@ -9,6 +9,11 @@ Google Colab was used to train the model. Three dense layers were used along wit
 
 The image above shows the accuracy accuired. 
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 2e50d62e3e3afa5d76728943e50aec060c1f8fb5
 ![Overview](Images/Home.PNG)
 
 Homepage of the applciation
