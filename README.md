@@ -9,13 +9,12 @@ Google Colab was used to train the model. Three dense layers were used along wit
 
 The image above shows the accuracy accuired. 
 
-
 ![Overview](Images/Home.PNG)
 
 Homepage of the applciation
 
-![Overview](Images/Takepic1.PNG)
-![Overview](Images/Takepic2.PNG)
+![Pic1](Images/pic1.PNG)
+![Classification](Images/pic2.PNG)
 
 Once you take a photo, the results pop up under classification
 
