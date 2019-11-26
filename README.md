@@ -6,10 +6,12 @@ You can find the code here ('Model/convo1.ipynb')
 Google Colab was used to train the model. Three dense layers were used along with 100 epochs. 
 
 ![Overview](Images/Wiki-100.PNG)
+
 The image above shows the accuracy accuired. 
 
 
 ![Overview](Images/Home.PNG)
+
 Homepage of the applciation
 
 ![Overview](Images/Takepic1.PNG)
