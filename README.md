@@ -19,8 +19,9 @@ The image above shows the accuracy accuired.
 Homepage of the applciation
 
 ![Pic1](Images/pic1.PNG)
+
 ![Classification](Images/pic2.PNG)
 
-Once you take a photo, the results pop up under classification
+Once you take a photo, the results pop up under classification. The image is converted to an array and sent to thepython flask app. The image is analysed by the model and the results are sent back to the html to be displayed. 
 
 Technology used: Python, TensorFlow, CNN, RESTful API, OpenCV, JS, HTML, CSS
